@@ -9,6 +9,7 @@
    """
 import string
 
+
 def wordFreq(fptr):
     """Counts the frequency of each word in a text file.
     
@@ -42,3 +43,26 @@ def printWds(data):
     print("\nWord Frequency:\n")
     for word in sorted(data.keys()):
         print(f"{word}: {data[word]}")
+
+def main():
+    """Main function to execute the word frequency counting."""
+    
+    while True:
+        file_name = input("Enter the file name (or 'exit' to quit): ")
+
+        if file_name.lower() == 'exit':
+            print("Exiting program.")
+            break
+
+        path = Path(file_name)  # NEW
+
+        if path.is_file():  # NEW check
+            with path.open('r') as file:  # NEW
+                print(f"File '{file_name}' has been successfully read.\n")
+                word_counts = wordFreq(file)
+                printWds(word_counts)
+        else:
+            print("File not found. Please make sure the file exists.")
+
+if __name__ == "__main__":
+    main()
