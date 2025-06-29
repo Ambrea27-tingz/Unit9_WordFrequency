@@ -54,10 +54,10 @@ def main():
             print("Exiting program.")
             break
 
-        path = Path(file_name)  # NEW
+        path = Path(file_name)  
 
-        if path.is_file():  # NEW check
-            with path.open('r') as file:  # NEW
+        if path.is_file():  
+            with path.open('r') as file:  
                 print(f"File '{file_name}' has been successfully read.\n")
                 word_counts = wordFreq(file)
                 printWds(word_counts)
