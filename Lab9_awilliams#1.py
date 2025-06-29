@@ -32,3 +32,13 @@ def wordFreq(fptr):
             freq[word] = freq.get(word, 0) + 1  # Use get() method
 
     return freq
+
+def printWds(data):
+    """Prints the words and their frequencies in alphabetical order.
+    
+    Args:
+        data: A dictionary with words as keys and their frequencies as values.
+    """
+    print("\nWord Frequency:\n")
+    for word in sorted(data.keys()):
+        print(f"{word}: {data[word]}")
