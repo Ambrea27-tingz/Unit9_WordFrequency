@@ -8,7 +8,7 @@
    An let's the user choose a filename to read. 
    """
 import string
-
+from pathlib import Path
 
 def wordFreq(fptr):
     """Counts the frequency of each word in a text file.
